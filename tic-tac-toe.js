@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const squares = document.querySelectorAll("#gameboard div");
-    let currentPlayer = "X"; 
+    let currentPlayer = "X"; y
     let boardState = Array(9).fill(""); 
 
     squares.forEach((square, index) => {
