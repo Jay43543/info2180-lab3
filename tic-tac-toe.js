@@ -1,7 +1,20 @@
-
 document.addEventListener("DOMContentLoaded", function() {
     const squares = document.querySelectorAll("#gameboard div");
-    squares.forEach(square => {
+    let currentPlayer = "X"; 
+    let boardState = Array(9).fill(""); 
+
+    squares.forEach((square, index) => {
         square.classList.add("square");
+        square.addEventListener("click", function() {
+    
+            if (boardState[index] === "") {
+                square.textContent = currentPlayer;
+                square.classList.add(currentPlayer);
+
+                boardState[index] = currentPlayer;
+
+                currentPlayer = currentPlayer === "X" ? "O" : "X";
+            }
+        });
     });
 });
